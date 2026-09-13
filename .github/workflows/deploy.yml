@@ -23,10 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # enablement: true legt die Pages-Site beim ersten Lauf selbst an
+      # Einmalig nötig: Settings -> Pages -> Source = "GitHub Actions"
+      # (das Workflow-Token darf die Pages-Site nicht selbst anlegen)
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
